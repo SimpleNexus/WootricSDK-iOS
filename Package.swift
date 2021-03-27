@@ -7,12 +7,12 @@ let package = Package(
     products: [
         .library(name: "WootricSDK", targets: ["WootricSDK"])
     ],
-    dependencies: [],
     targets: [
         .target(
             name: "WootricSDK",
             dependencies: [],
-            path: "WootricSDK/WootricSDK"
+            path: "WootricSDK/WootricSDK",
+            publicHeadersPath: "."
         )
     ]
 )
