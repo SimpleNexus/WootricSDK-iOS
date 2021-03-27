@@ -1,4 +1,4 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -10,8 +10,8 @@ let package = Package(
     targets: [
         .target(
             name: "WootricSDK",
-            dependencies: [],
             path: "WootricSDK/WootricSDK",
+            resources: [.process("fontawesome-webfont.tff"), .process("info.plist")],
             publicHeadersPath: "."
         )
     ]
