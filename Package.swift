@@ -10,7 +10,8 @@ let package = Package(
         .target(
             name: "WootricSDK",
             path: "WootricSDK/WootricSDK",
-            resources: [.process("fontawesome-webfont.tff"), .process("info.plist")],
+            exclude: ["Info.plist"],
+            resources: [.process("fontawesome-webfont.ttf")],
             publicHeadersPath: "."
         )
     ]
