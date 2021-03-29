@@ -3,7 +3,6 @@ import PackageDescription
 
 let package = Package(
     name: "WootricSDK",
-    // platforms: [.iOS("8.0"), .macOS("10.10"), .tvOS("9.0"), .watchOS("2.0")],
     products: [
         .library(name: "WootricSDK", targets: ["WootricSDK"])
     ],
@@ -11,7 +10,8 @@ let package = Package(
         .target(
             name: "WootricSDK",
             path: "WootricSDK/WootricSDK",
-            resources: [.process("fontawesome-webfont.tff"), .process("info.plist")],
+            exclude: ["Info.plist"],
+            resources: [.process("fontawesome-webfont.ttf")],
             publicHeadersPath: "."
         )
     ]

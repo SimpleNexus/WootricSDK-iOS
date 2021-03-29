@@ -32,6 +32,11 @@
 + (void)dynamicallyAddFont {
   NSString *fontPath = [[NSBundle bundleForClass:[UIItems class]] pathForResource:@"fontawesome-webfont" ofType:@"ttf"];
   
+    if ([fontPath length] == 0) {
+    // Try to find the font in the SPM bundle
+    fontPath = [SWIFTPM_MODULE_BUNDLE pathForResource:@"fontawesome-webfont" ofType:@"ttf"];
+  }
+  
   CFErrorRef error;
   NSURL *url = [NSURL fileURLWithPath:fontPath isDirectory:NO];
   if (!CTFontManagerRegisterFontsForURL((__bridge CFURLRef)url, kCTFontManagerScopeNone, &error)) {
